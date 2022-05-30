@@ -25,7 +25,7 @@ jobs:
         with:
           team: 'moddedjanitor'
           token: ${{ secrets.TOKEN }}
-          comment: '@${{ github.actor }} You need to be a ModdedJanitor in order to use this command.'
+          comment: '@${{ github.actor }}, you need to be a ModdedJanitor in order to use this command.'
       - name: Create commit comment
         uses: ben-z/actions-comment-on-issue@1.0.2
         with:
