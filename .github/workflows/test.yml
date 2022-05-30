@@ -29,6 +29,6 @@ jobs:
       - name: Create commit comment
         uses: ben-z/actions-comment-on-issue@1.0.2
         with:
-          token: ${{ secrets.TOKEN }}
-          GITHUB_TOKEN: |
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          message: |
             This is a multi-line test comment '${{ steps.command.outputs.command-arguments }}'
