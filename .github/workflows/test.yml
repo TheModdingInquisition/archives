@@ -22,7 +22,7 @@ jobs:
       - id: is_member
         uses: TheModdingInquisition/actions-team-membership@v1.0
         with:
-          team: 'inexsitant'
+          team: 'moderators'
           token: ${{ secrets.TOKEN }}
           comment: 'Stab'
       - name: Create commit comment
