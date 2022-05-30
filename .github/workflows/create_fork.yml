@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
           comment: '@${{ github.actor }}, you need to be a ModdedJanitor in order to use this command.'
       - id: fork
-        uses: TheModdingInquisition/actions-fork-repo@7f8fb9373abeed136ebf48fed9cc6d1911c259e6
+        uses: TheModdingInquisition/actions-fork-repo@071ed8acf2c8aa3a2e123eab7a9fdcab4a84aae1
         with:
           token: ${{ secrets.TOKEN }}
           organization: 'TheModdingInquisition'
