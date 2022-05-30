@@ -23,7 +23,7 @@ jobs:
       - id: is_member
         uses: TheModdingInquisition/actions-team-membership@v1.0
         with:
-          team: 'moddedjanitor'
+          team: 'moddedjanitors'
           token: ${{ secrets.TOKEN }}
           comment: '@${{ github.actor }}, you need to be a ModdedJanitor in order to use this command.'
       - name: Create commit comment
