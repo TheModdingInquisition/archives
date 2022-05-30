@@ -18,7 +18,7 @@ jobs:
           allow-edits: "false"
           permission-level: none
       - id: is_member
-        uses: TheModdingInquisition/actions-team-membership@v1
+        uses: TheModdingInquisition/actions-team-membership@v1.0
         with:
           team: 'inexsitant'
           token: ${{ secrets.TOKEN }}
