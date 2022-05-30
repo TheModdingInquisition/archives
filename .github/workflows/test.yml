@@ -1,0 +1,30 @@
+on: issue_comment
+name: Test Commands
+jobs:
+  check_commands:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Commands
+      url: https://github.com
+    steps:
+      - name: Check for Command
+        id: command
+        uses: xt0rted/slash-command-action@v1
+        with:
+          repo-token: ${{ secrets.TOKEN }}
+          command: hmm
+          reaction: "true"
+          reaction-type: "eyes"
+          allow-edits: "false"
+          permission-level: none
+      - id: is_member
+        uses: TheModdingInquisition/actions-team-membership@v1
+        with:
+          team: 'inexsitant'
+          token: ${{ secrets.TOKEN }}
+          comment: 'Stab'
+      - name: Create commit comment
+        uses: peter-evans/commit-comment@v1
+        with:
+          body: |
+            This is a multi-line test comment '${{ steps.command.outputs.command-arguments }}'
