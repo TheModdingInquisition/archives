@@ -26,8 +26,14 @@ jobs:
           team: 'moddedjanitors'
           token: ${{ secrets.TOKEN }}
           comment: '@${{ github.actor }}, you need to be a ModdedJanitor in order to use this command.'
+      - id: fork
+        uses: TheModdingInquisition/actions-fork-repo@8160b548751a27e7b9df53969b903b3d0e5ef7b4
+        with:
+          token: ${{ secrets.TOKEN }}
+          organization: 'TheModdingInquisition'
+          repo: ${{ steps.command.outputs.command-arguments }}
       - name: Create commit comment
         uses: ben-z/actions-comment-on-issue@1.0.2
         with:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          message: 'Hi.'
+          message: '@${{ github.actor }}, a fork has been created at ${{ steps.fork.outputs.fork_url }}.'
